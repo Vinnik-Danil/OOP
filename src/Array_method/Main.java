@@ -12,7 +12,7 @@ public class Main {
 *
 *asdasdasda
 *
-*
+*Hello word
 *
 * */
         mas.add(6);
