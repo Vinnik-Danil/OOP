@@ -7,14 +7,7 @@ public class Main {
         mas.add(4);
         mas.add(6);
         mas.add(8);
-/*
-*
-*
-*asdasdasda
-*
-*Hello word
-*
-* */
+
         mas.add(6);
         mas.add(8);
 
