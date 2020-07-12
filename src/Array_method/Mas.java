@@ -7,7 +7,7 @@ public class Mas {
 *
 * ьфыььвфьывьфыв
 *
-* */
+* */123123123123
 
     private int size=0;
     private int mass[] = new int[size];
