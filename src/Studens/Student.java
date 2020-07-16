@@ -1,6 +1,8 @@
 package Studens;
 
-public class Student extends Person {
+import java.io.Serializable;
+
+public class Student extends Person implements Serializable {
     public int[] marks;
     public boolean[] presence;
     private int id;
