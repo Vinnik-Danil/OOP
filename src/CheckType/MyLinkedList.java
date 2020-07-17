@@ -3,7 +3,6 @@ package CheckType;
 
 import java.util.*;
 
-//This list does not permit null elements
 public class MyLinkedList<E> implements List<E> {
     private Node head = null;
     private Node tail = null;
@@ -248,7 +247,6 @@ public class MyLinkedList<E> implements List<E> {
             throw new NullPointerException();
         }
 
-        //InsertSort
         E tmp;
         int j;
 
@@ -306,45 +304,11 @@ public class MyLinkedList<E> implements List<E> {
 
     @Override
     public int indexOf(Object o) {
-        if (o == null) {
-            throw new NullPointerException();
-        }
-
-        int index = 0;
-
-        Node currentNode = head;
-
-        while (currentNode != null) {
-            if (currentNode.data.equals(o)) {
-                return index;
-            }
-
-            currentNode = currentNode.next;
-            index++;
-        }
-
         return -1;
     }
 
     @Override
     public int lastIndexOf(Object o) {
-        if (o == null) {
-            throw new NullPointerException();
-        }
-
-        int index = size - 1;
-
-        Node currentNode = tail;
-
-        while (currentNode != null) {
-            if (currentNode.data.equals(o)) {
-                return index;
-            }
-
-            currentNode = currentNode.previous;
-            index--;
-        }
-
         return -1;
     }
 
@@ -355,10 +319,6 @@ public class MyLinkedList<E> implements List<E> {
 
     @Override
     public ListIterator<E> listIterator(int index) {
-        if (index >= size || index < 0) {
-            throw new IndexOutOfBoundsException();
-        }
-
         return new LinkedListIterator(index);
     }
 
