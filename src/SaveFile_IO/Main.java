@@ -1,5 +1,7 @@
 package SaveFile_IO;
 
+import Studens.Student;
+
 import java.io.*;
 import java.util.ArrayList;
 
@@ -11,8 +13,8 @@ class Main {
         String filename = "text.txt";
         // создадим список объектов, которые будем записывать
         ArrayList<Person> people = new ArrayList<Person>();
-        people.add(new Person("Tom", 30, 175, false));
-        people.add(new Person("Sam", 33, 178, true));
+        people.add(new Person("Ivanov", 30, 175, false));
+        people.add(new Person("Petrov", 33, 178, true));
 
         try(ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(filename)))
         {
