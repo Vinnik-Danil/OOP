@@ -2,20 +2,14 @@ package Array_method;
 
 
 public class Mas {
-/*
-*
-*
-* ьфыььвфьывьфыв
-*123123123123
-**/
 
     private int size=0;
     private int mass[] = new int[size];
 
-    public void setMas(int[] mass){
-        this.mass= mass;
-        this.size= mass.length;
-    }
+//    public void setMas(int[] mass){
+//        this.mass= mass;
+//        this.size= mass.length;
+//    }
     public void getMas() {
         System.out.print("Mass is :"+"[");
 

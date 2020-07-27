@@ -139,23 +139,6 @@ public class HashMap implements Map {
         return null;
     }
 
-//        public boolean putAll(HashMap hashMap){
-//            for (int i = 0; i <NUM_BUCKETS ; i++) {
-//
-//
-//                Entry current = data[i];
-//
-//                if(current != null) {
-//
-//
-//                    System.out.println(current.value);
-//
-//                }
-//             }
-//            return true;
-//        }
-
-
         public void putAll(Map map) {
             if (map == null) {
                 throw new NullPointerException("Null map is not permitted");
