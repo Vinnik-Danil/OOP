@@ -7,12 +7,11 @@ public class Main {
         BinaryTree set2 = new BinaryTree();
 
         set.add(1);
-        set.add(5);
-        set.add(8);
-        set.add(2);
-        set.add(7);
-        set.add(0);
-        set.add(3);
+        set.add(1);
+        set.add(1);
+        set.add(1);
+        set.add(1);
+
         set.toString();
         System.out.println("SIZE: "+set.size());
         System.out.println("Method contains: " + set.contains(5));

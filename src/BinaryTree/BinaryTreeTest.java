@@ -22,13 +22,13 @@ public class BinaryTreeTest {
         binaryTree.add(1);
         Assert.assertEquals(1,binaryTree.size());
         binaryTree.add(4);
-        Assert.assertEquals(4,binaryTree.size());
+        Assert.assertEquals(2,binaryTree.size());
 
     }
     @Test
     public void testClear(){
         binaryTree.clear();
-        Assert.assertEquals(null,binaryTree.size());
+        Assert.assertEquals(0,binaryTree.size());
     }
     @Test
     public void testAddAll(){
@@ -77,6 +77,4 @@ public class BinaryTreeTest {
 
         Assert.assertTrue(binaryTree.containsAll(newBinaryTree));
     }
-
-
 }
