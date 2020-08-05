@@ -4,10 +4,13 @@ import java.io.*;
 import java.math.BigInteger;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
-import java.util.TreeMap;
+import java.util.Scanner;
 
 
 public class Md5 extends Thread {
+
+
+    String name_Of_File = "10_million_password_list_top_100000.txt";
 
     public String encryption(String st) throws IOException {
         MessageDigest messageDigest = null;
@@ -117,19 +120,33 @@ public class Md5 extends Thread {
                 e.printStackTrace();
             }
         };
+        Runnable runnableSimple_Words = () -> {
+            try {
+                System.out.println(Thread.currentThread().getName());
+                simple_word(st);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        };
 
         Thread threadAG = new Thread(runnableAG);
         threadAG.start();
+
         Thread threadHN = new Thread(runnableHN);
         threadHN.start();
+
         Thread threadOU = new Thread(runnableOU);
         threadOU.start();
+
         Thread threadVZ = new Thread(runnableVZ);
         threadVZ.start();
 
+        Thread threadSimple_word = new Thread(runnableSimple_Words);
+        threadSimple_word.start();
     }
 
     public String aG (String st) throws IOException {
+
         String myStr;
         StringBuffer sb = new StringBuffer();
         System.out.println(sb);
@@ -145,18 +162,12 @@ public class Md5 extends Thread {
                         sb.insert(3, c4);
 
                         myStr = sb.toString();
-
-//                        System.out.println("-----");
-//                        System.out.println(myStr);
-
                         String hashResult = encryption(myStr);
-//                        System.out.println(hashResult);
-
 
                         if (hashResult.equals(st)) {
                             System.out.println("Password is: " + myStr);
+                            Thread.interrupted();
                             return myStr;
-
                         }
                     }
                 }
@@ -184,15 +195,10 @@ public class Md5 extends Thread {
 
                         myStr = sb.toString();
 
-//                        System.out.println("-----");
-//                        System.out.println(myStr);
-
                         String hashResult = encryption(myStr);
-//                        System.out.println(hashResult);
-
-
                         if (hashResult.equals(st)) {
                             System.out.println("Password is: " + myStr);
+                            Thread.interrupted();
                             return myStr;
                         }
                     }
@@ -221,22 +227,16 @@ public class Md5 extends Thread {
 
                         myStr = sb.toString();
 
-//                        System.out.println("-----");
-//                        System.out.println(myStr);
-
                         String hashResult = encryption(myStr);
-//                        System.out.println(hashResult);
-
-
                         if (hashResult.equals(st)) {
                             System.out.println("Password is: " + myStr);
+                            Thread.interrupted();
                             return myStr;
                         }
                     }
                 }
             }
         }
-
         return"";
     }
 
@@ -258,23 +258,35 @@ public class Md5 extends Thread {
 
                         myStr = sb.toString();
 
-//                        System.out.println("-----");
-//                        System.out.println(myStr);
-
                         String hashResult = encryption(myStr);
-//                        System.out.println(hashResult);
-
-
                         if (hashResult.equals(st)) {
                             System.out.println("Password is: " + myStr);
+                            Thread.interrupted();
                             return myStr;
                         }
                     }
                 }
             }
         }
-
         return"";
+    }
+
+    public String simple_word (String st) throws IOException {
+        InputStream inputStream = new FileInputStream(name_Of_File);
+        Scanner scanner = new Scanner(inputStream);
+
+        while (scanner.hasNextLine()) {
+
+            String nextLine = scanner.nextLine();
+            String hashResult = encryption(nextLine);
+
+            if (hashResult.equals(st)) {
+                System.out.println("Password is: " + nextLine);
+                Thread.interrupted();
+                return nextLine;
+            }
+        }
+        return"Password not found!";
     }
 
 }
