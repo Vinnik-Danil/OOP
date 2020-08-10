@@ -15,6 +15,7 @@ public class Function {
         }
         return result/list.size();
     }
+
     public double returnPositiveNumb(ArrayList<Integer> list){
         long result=0;
         Metod m= new Metod();
@@ -29,7 +30,7 @@ public class Function {
             }
 
             if (m.pow(list.get(i),2) % 2 == 0) {
-                result += m.pow(list.get(i),2) + result;
+                result += m.pow(list.get(i),2) ;
             }
         }
         return result;
