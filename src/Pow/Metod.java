@@ -1,7 +1,7 @@
 package Pow;
 
 public class Metod {
-    public double pow  (double powValue, double numb){
+    public double pow  (double numb, double powValue){
         double result=1;
 //        for (int i = 1; i <= powValue; i++) {
 //            result = result * numb;
