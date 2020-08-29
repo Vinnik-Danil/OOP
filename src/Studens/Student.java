@@ -2,7 +2,7 @@ package Studens;
 
 import java.io.Serializable;
 
-public class Student extends Person implements Serializable {
+public class Student extends Person implements Serializable , Comparable<Student> {
     public int[] marks;
     public boolean[] presence;
     private int id;
@@ -17,5 +17,22 @@ public class Student extends Person implements Serializable {
     @Override
     public void GetVoice() {
         System.out.println("Hi "+toString() + surname );
+    }
+
+
+
+    public String getSurname() {
+        return surname;
+    }
+
+    @Override
+    public int compareTo(Student otherStudent) {
+        return surname.compareTo(otherStudent.getSurname());
+    }
+
+    public Student setSurnameAndReturnStudent(String newSurname) {
+        surname = newSurname;
+        return this;
+
     }
 }
