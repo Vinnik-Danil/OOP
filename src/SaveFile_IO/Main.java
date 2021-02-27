@@ -1,7 +1,7 @@
 package SaveFile_IO;
 
-import com.google.gson.Gson;
-import Studens.Student;
+//import com.google.gson.Gson;
+//import Studens.Student;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -11,7 +11,7 @@ import java.util.ArrayList;
 
 class Main {
 
-    private static final Gson GSON = new Gson();
+//    private static final Gson GSON = new Gson();
 
     //@SuppressWarnings("unchecked")
     public static void main(String[] args) throws IOException {
@@ -48,7 +48,7 @@ class Main {
         }
 
         FileWriter fileWriter = new FileWriter("output_workers.json");
-        fileWriter.write(GSON.toJson(newPeople));
+//        fileWriter.write(GSON.toJson(newPeople));
         fileWriter.flush();
 
 
